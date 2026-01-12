@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gabriel Rossatto | Portfólio</title>
+  <meta name="description" content="Portfólio de projetos - Desenvolvedor Front-end Júnior (React)" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__content">
+      <a class="logo" href="#topo">GR</a>
+
+      <nav class="nav" id="nav">
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <button class="menuBtn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="avatar">
+            <img src="img.jpg" alt="Foto do Gabriel Rossatto">
+        </div>
+        <div>
+          <p class="badge">Disponível para vagas Júnior</p>
+          <h1>Gabriel Rossatto</h1>
+          <p class="subtitle">Desenvolvedor Front-end Júnior • foco em React</p>
+          <p class="lead">
+            Eu construo interfaces claras, responsivas e organizadas. Aqui estão alguns projetos
+            que mostram meu nível atual e evolução.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--primary" href="#projetos">Ver projetos</a>
+            <a class="btn" href="https://github.com/GabrielRossatto" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/gabriel-rossatto" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+
+          <div class="miniInfo">
+            <span>📍 SP, Brasil</span>
+            <span>⚡ JavaScript • React • CSS</span>
+          </div>
+        </div>
+
+        <div class="heroCard">
+          <h2>O que você vai ver</h2>
+          <ul>
+            <li>Projetos com foco em UI e organização</li>
+            <li>Consumo de APIs e estados (loading/erro)</li>
+            <li>Código limpo + responsividade</li>
+          </ul>
+
+          <div class="heroStats">
+            <div class="stat">
+              <strong id="statProjects">1</strong>
+              <span>Projetos</span>
+            </div>
+            <div class="stat">
+              <strong>Júnior</strong>
+              <span>Nível atual</span>
+            </div>
+            <div class="stat">
+              <strong>Front-end</strong>
+              <span>Área</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projetos">
+      <div class="container">
+        <div class="section__head">
+          <h2>Projetos</h2>
+          <p>Selecionei os mais relevantes. Clique em “Detalhes”.</p>
+
+          <div class="filters">
+            <button class="chip is-active" data-filter="all">Todos</button>
+            <button class="chip" data-filter="frontend">Front-end</button>
+
+          </div>
+        </div>
+
+        <div class="grid" id="projectsGrid">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="about">
+          <div>
+            <h2>Sobre</h2>
+            <p>
+              Sou formado em Análise e Desenvolvimento de Sistemas e estou focado em iniciar minha carreira
+              como Desenvolvedor Front-end Júnior, principalmente com React.
+            </p>
+            <p>
+              Gosto de projetos com objetivo claro, layout limpo e código bem organizado.
+            </p>
+          </div>
+
+          <div class="aboutCard">
+            <h3>Skills que eu pratico</h3>
+            <ul class="list">
+              <li>Componentização e reaproveitamento</li>
+              <li>Formulários e validação</li>
+              <li>Consumo de APIs REST</li>
+              <li>Responsividade e CSS organizado</li>
+              <li>Git/GitHub</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="contact">
+          <div>
+            <h2>Contato</h2>
+            <p>Quer falar comigo? Me chama:</p>
+
+            <div class="actions">
+              <a class="btn btn--primary" href="mailto:rossattogabriel@gmail.com">Email</a>
+              <a class="btn" href="https://www.linkedin.com/in/gabriel-rossatto/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="btn" href="https://github.com/GabrielRossatto" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+
+            <p class="small">
+                rossattogabriel@gmail.com <br/>
+                (11) 91484-9538
+            </p>
+          </div>
+
+          <div class="contactCard">
+            <h3>Resumo rápido</h3>
+            <p>
+              Front-end Júnior • React • JS • CSS <br />
+              Projetos com UI + integração
+            </p>
+            <div class="divider"></div>
+            <p class="small">
+              Se você quiser, eu deixo isso com SEO básico e um layout ainda mais forte.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <span>© <span id="year"></span> Gabriel Rossatto</span>
+      <a href="#topo">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modalOverlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__head">
+        <h3 id="modalTitle">Título</h3>
+        <button class="iconBtn" id="closeModal" aria-label="Fechar">✕</button>
+      </div>
+      <p class="modal__desc" id="modalDesc"></p>
+
+      <div class="modal__tags" id="modalTags"></div>
+
+      <div class="modal__actions">
+        <a class="btn btn--primary" id="modalDemo" href="#" target="_blank" rel="noreferrer">Ver demo</a>
+        <a class="btn" id="modalRepo" href="#" target="_blank" rel="noreferrer">Ver código</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
