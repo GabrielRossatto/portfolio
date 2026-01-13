@@ -421,9 +421,6 @@ h1{
 }
 
 
-.hero__grid{
-  align-items: center; 
-}
 
 .avatar{
   margin-top: 0;       
@@ -434,25 +431,21 @@ h1{
 }
 
 
-/* ===== Mobile-first helpers ===== */
 img { max-width: 100%; height: auto; }
 html, body { overflow-x: hidden; }
 
-/* Evita que o sticky header “coma” o topo quando clica em âncoras */
 #topo, section { scroll-margin-top: 84px; }
 
-/* ===== Header: menu mobile ===== */
 @media (max-width: 768px){
   .menuBtn{ display: inline-flex; }
 
-  /* nav vira dropdown */
   .nav{
     position: absolute;
     top: 64px;
     left: 16px;
     right: 16px;
 
-    display: none;            /* fechado por padrão */
+    display: none;           
     flex-direction: column;
     gap: 6px;
 
@@ -473,7 +466,6 @@ html, body { overflow-x: hidden; }
   }
 }
 
-/* ===== Hero/layout geral ===== */
 @media (max-width: 900px){
   .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about, .contact{ grid-template-columns: 1fr; }
@@ -482,20 +474,18 @@ html, body { overflow-x: hidden; }
 @media (max-width: 768px){
   .hero{ padding: 40px 0 22px; }
 
-  /* IMPORTANTÍSSIMO: você tem 3 .hero__grid duplicados no CSS.
-     Aqui a gente força o comportamento no mobile. */
+
   .hero__grid{
     grid-template-columns: 1fr;
     gap: 18px;
     align-items: start;
   }
 
-  /* Avatar: tira o translate e reduz tamanho */
   .avatar{
     width: 120px;
     height: 120px;
-    transform: none;      /* remove translate */
-    justify-self: center; /* centraliza no mobile */
+    transform: none;      
+    justify-self: center;
     align-self: center;
     margin: 0 auto;
   }
