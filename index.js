@@ -132,3 +132,5 @@ menuBtn.addEventListener("click", () => {
 
 // Render inicial
 renderProjects(projects);
+
+

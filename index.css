@@ -434,21 +434,100 @@ h1{
 }
 
 
+/* ===== Mobile-first helpers ===== */
+img { max-width: 100%; height: auto; }
+html, body { overflow-x: hidden; }
+
+/* Evita que o sticky header “coma” o topo quando clica em âncoras */
+#topo, section { scroll-margin-top: 84px; }
+
+/* ===== Header: menu mobile ===== */
 @media (max-width: 768px){
-  h1{
-    font-size: 32px;
+  .menuBtn{ display: inline-flex; }
+
+  /* nav vira dropdown */
+  .nav{
+    position: absolute;
+    top: 64px;
+    left: 16px;
+    right: 16px;
+
+    display: none;            /* fechado por padrão */
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(18,22,36,.96);
+    box-shadow: var(--shadow);
   }
 
+  .nav.is-open{ display: flex; }
+
+  .nav a{
+    padding: 12px 12px;
+    border-radius: 12px;
+    color: var(--text);
+    background: rgba(255,255,255,.03);
+  }
+}
+
+/* ===== Hero/layout geral ===== */
+@media (max-width: 900px){
+  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about, .contact{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px){
+  .hero{ padding: 40px 0 22px; }
+
+  /* IMPORTANTÍSSIMO: você tem 3 .hero__grid duplicados no CSS.
+     Aqui a gente força o comportamento no mobile. */
   .hero__grid{
     grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
   }
+
+  /* Avatar: tira o translate e reduz tamanho */
+  .avatar{
+    width: 120px;
+    height: 120px;
+    transform: none;      /* remove translate */
+    justify-self: center; /* centraliza no mobile */
+    align-self: center;
+    margin: 0 auto;
+  }
+
+  .lead{ max-width: 100%; }
 
   .actions{
     flex-direction: column;
     align-items: stretch;
   }
 
-  .cardActions{
-    grid-template-columns: 1fr;
+  .btn{ width: 100%; }
+
+  .heroCard{ margin-top: 6px; }
+  .heroStats{ grid-template-columns: 1fr; }
+  .grid{ grid-template-columns: 1fr; }
+
+  .footer__content{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
+
+  .modal{
+    width: 100%;
+    max-height: calc(100vh - 48px);
+    overflow: auto;
+  }
+}
+
+/* ===== Telas muito pequenas ===== */
+@media (max-width: 360px){
+  h1{ font-size: 28px; }
+  .badge{ font-size: 13px; }
 }
